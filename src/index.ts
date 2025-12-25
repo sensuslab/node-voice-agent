@@ -20,8 +20,10 @@ const deepgram = createClient(DEEPGRAM_API_KEY);
 
 // Create HTTP server to serve the static HTML file
 const server = http.createServer((req, res) => {
-  if (req.url === '/') {
-    fs.readFile(path.join(__dirname, '../static/index.html'), (err, data) => {
+  const staticDir = path.join(__dirname, '../static');
+
+  if (req.url === '/' || req.url === '/index.html') {
+    fs.readFile(path.join(staticDir, 'index.html'), (err, data) => {
       if (err) {
         res.writeHead(500);
         res.end('Error loading index.html');
@@ -30,6 +32,9 @@ const server = http.createServer((req, res) => {
       res.writeHead(200, { 'Content-Type': 'text/html' });
       res.end(data);
     });
+  } else {
+    res.writeHead(404);
+    res.end('Not Found');
   }
 });
 
