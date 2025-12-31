@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;600&display=swap');
+
+:root {
+  /* Colors */
+  --orb-core: #00D4E8;
+  --orb-deep: #0A1628;
+  --orb-halo: #7EE8FA;
+  --surface-lavender: #E8D5F0;
+  --surface-rose: #F5D0E0;
+  --surface-cream: #FFF8F0;
+  --glass-white: #FFFFFF;
+  --text-primary: #1A1A2E;
+  --text-secondary: #6B6B8D;
+  --text-muted: #9B9BB0;
+  --accent-pink: #FF8FAB;
+  --accent-purple: #C490E4;
+  --accent-orange: #FFB366;
+  --accent-blue: #7EB8FF;
+  --success: #7ED9A6;
+  --voice-active: #00E5CC;
+  --error: #FF7B7B;
+
+  /* Glass */
+  --glass-bg: rgba(255, 255, 255, 0.75);
+  --glass-bg-heavy: rgba(255, 255, 255, 0.85);
+  --glass-border: rgba(255, 255, 255, 0.4);
+  --glass-blur: 20px;
+
+  /* Shadows */
+  --shadow-panel: 0 8px 32px rgba(31, 38, 135, 0.12);
+  --shadow-glow-cyan: 0 0 40px rgba(0, 212, 232, 0.4);
+  --shadow-glow-soft: 0 0 60px rgba(126, 232, 250, 0.3);
+  --shadow-inset: inset 0 1px 0 rgba(255, 255, 255, 0.6);
+
+  /* Typography */
+  --font-display: 'Outfit', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  /* Animation */
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Ambient Background */
+.ambient-bg {
+  background: linear-gradient(
+    135deg,
+    var(--surface-lavender) 0%,
+    var(--surface-rose) 35%,
+    var(--surface-cream) 70%,
+    var(--surface-lavender) 100%
+  );
+  background-size: 400% 400%;
+  animation: ambientShift 20s ease infinite;
+}
+
+@keyframes ambientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
